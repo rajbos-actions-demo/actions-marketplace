@@ -21,7 +21,7 @@ jobs:
       id: load-actions
       with: 
         PAT: ${{ secrets.PAT }}
-        user: ${{ github.repository_owner }}
+        organization: ${{ github.repository_owner }}
          
     # todo: convert this part into an action to make it more transferable. Don't forget to update the readme then!
     - run: npm install fs    
