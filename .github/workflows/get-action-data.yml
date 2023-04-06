@@ -39,14 +39,14 @@ jobs:
       uses: actions/upload-artifact@v3
       with: 
         name: actions
-        path: ${{ steps.filename.outputs.actions-file-path }}
+        path: ${{ steps.filename.outputs.filename }}
    
     - name: Upload json to this repository
       #uses: LasyIsLazy/github-upload-action@v0.1.0
       uses: rajbos-actions/github-upload-action@v0.2.0
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
-        file-path: ${{ steps.filename.outputs.actions-file-path }}
+        file-path: ${{ steps.filename.outputs.filename }}
         owner: ${{ github.repository_owner }}
         repo: actions-marketplace # ${{ github.repository }} doesn't work with this action :-(, it'll fail over the slash and owner name
         #remote-dir:  // upload in the root
